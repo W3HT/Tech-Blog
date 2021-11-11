@@ -1,0 +1,18 @@
+{{> homeNavbar}}
+
+{{#each postData as |post|}}
+<a href="/post/{{post.id}}">
+    <div id="singlePost" class="card m-3">
+        <div class="card-header text-white bg-primary">
+            {{post.title}}
+        </div>
+        <div class="card-body">
+            <blockquote class="blockquote mb-0">
+                <p>{{post.content}}</p>
+                <footer class="blockquote-footer">{{post.user.name}} {{format_date post.createdAt}}</footer>
+            </blockquote>
+        </div>
+    </div>
+
+</a>
+{{/each}}
