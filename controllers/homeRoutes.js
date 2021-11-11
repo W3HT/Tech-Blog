@@ -58,9 +58,10 @@ router.get('login', (req, res)=> {
         res.redirect('/');
         return;
     }
+    // signup '/signup'
     res.render('signup')
 })
 
-// signup '/signup'
+
 
 module.exports = router;
