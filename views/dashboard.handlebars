@@ -2,19 +2,20 @@
 
 <section>
     {{if logged_in}}
-    {{#each posts as |post|}}
-        <a href="/viewPost/{{post.id}}">
-            <div id="singlePost" class="card m=3">
-                <div class="card-header text-white bg-primary">
-                    {{post.title}}
-                    {{#if post.updated}}
-                        <p>Updated: {{format_date post.updatedAt}}</p>
-                        {{else}}
-                        <p>Created: {{format_date blog.createdAt}}</p>
-                    {{/if}}
+        {{#each posts as |post|}}
+            <a href="/viewPost/{{post.id}}">
+                <div id="singlePost" class="card m=3">
+                    <div class="card-header text-white bg-primary">
+                        {{post.title}}
+                        {{#if post.updated}}
+                            <p>Updated: {{format_date post.updatedAt}}</p>
+                            {{else}}
+                            <p>Created: {{format_date blog.createdAt}}</p>
+                        {{/if}}
+                    </div>
                 </div>
-            </div>
-        </a>
+            </a>
+        {{/each}}
     {{/if}}
 </section>
 <button type="button" id="newPostBtn" class="btn btn-info m-3">➕ New Post</button>
