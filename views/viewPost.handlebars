@@ -1,0 +1,15 @@
+{{> homeNavbar}}
+<form>
+    <div id="post-card" class="form-group" data-postID="{{post.id}}">
+        <label for="title">Post Title</label>
+        <input type="text" class="form-control" id="title" value="{{post.title}}">
+    </div>
+    <div class="form-group">
+        <label for="content">Post Content</label>
+        <textarea class="form-control" id="content" roles="3">{{post.content}}</textarea>
+    </div>
+    <button type="submit" class="btn btn-info" id="update-post-btn">Update Post</button>
+    <button type="submit" class="btn btn-info" id="delete-post-btn">Delete Post</button>
+
+</form>
+<script src="./js/viewPost.js"></script>
