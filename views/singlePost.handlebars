@@ -1,0 +1,44 @@
+{{> homeNavbar}}
+
+<div class="card m-3">
+    <div class="card-header text-white bg-primary" data-postId="{{post.id}}">
+        {{post.title}}
+    </div>
+    <div class="card-body">
+        <blockquote class="blockquote mb-0">
+            <p>{{post.content}}</p>
+            {{#if post.updated}}
+                <p> - {{post.user.name}} Updated: {{format_date post.updatedAt}}</p>
+                {{else}}
+                <p> - {{post.user.name}} Created: {{format_date post.createddAt}}</p>
+            {{/if}}
+        </blockquote>
+    </div>
+</div>
+<section class="m-3">
+    <h4>Comments</h4>
+    {{#if post.comments}}
+        {{#each post.comments as |comment|}}
+            <div class="card m-3">
+                <p>{{comment.content}}</p>
+                {{#if comment.updated}}
+                    <p> - {{comment.user.name}} Updated: {{format_date comment.updatedAt}} </p>
+                    {{else}}
+                    <p> - {{comment.user.name}} Created: {{format_date comment.createdAt}} </p>
+                {{/if}}
+            </div>
+        {{/each}}
+    {{/if}}
+</section>
+
+{{#if logged_in}}
+<form class="m-3">
+    <div class="form-group">
+        <label for="content">Comment</label>
+        <textarea class="form-control" id="content" rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn btn-info">➕ New Comment</button>
+</form>
+{{/if}}
+
+<script src="/js/newComment.js"></script>
