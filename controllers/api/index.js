@@ -10,7 +10,7 @@ const postRoutes = require('./postRoutes');
 const commentRoutes = require('./commentRoutes');
 
 //call routes
-router.use('/user', userRoutes);
+router.use('/users', userRoutes);
 router.use('/post', postRoutes);
 router.use('/comment', commentRoutes);
 

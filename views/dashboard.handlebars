@@ -1,17 +1,17 @@
 {{>homeNavbar}}
 
 <section>
-    {{if logged_in}}
+    {{#if logged_in}}
         {{#each posts as |post|}}
             <a href="/viewPost/{{post.id}}">
                 <div id="singlePost" class="card m=3">
                     <div class="card-header text-white bg-primary">
                         {{post.title}}
-                        {{#if post.updated}}
+                        {{!-- {{#if post.updated}}
                             <p>Updated: {{format_date post.updatedAt}}</p>
                             {{else}}
-                            <p>Created: {{format_date blog.createdAt}}</p>
-                        {{/if}}
+                            <p>Created: {{format_date blog.createdAt}}</p> --}}
+                        {{!-- {{/if}} --}}
                     </div>
                 </div>
             </a>

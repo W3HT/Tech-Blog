@@ -9,17 +9,19 @@ router.get('/', withAuth, async (req, res) => {
     try {
         const postData = await Post.findAll({
             where: {
-                userId: req.session.user_id,
+                user_id: req.session.user_id,
 
             },
         })
     
         const posts = postData.map((post) => post.get({ plain: true}));
-
+        console.log(posts)
         res.render('dashboard', {posts, logged_in: req.session.logged_in});
         
-    } catch (err) {
-        res.redirect('login');
+    }  catch (err) {
+        console.log(err)
+        res.status(500).json(err);
+
     }
 });
 
@@ -61,7 +63,7 @@ router.get('/viewPost/:id', async (req,res) =>{
     });
     let post = postData.get({plain: req.session.logged_in});
     post.comments = comments 
-    res.render('vewPost', {logged_in: req.session.logged_in});)
+    res.render('vewPost', {logged_in: req.session.logged_in});
  });
 
 //
