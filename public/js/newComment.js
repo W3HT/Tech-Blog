@@ -9,7 +9,7 @@ const submitNewComment = async (event) => {
         body: JSON.stringify({content, post_id}),
         headers: { 'Content-Type': 'application/json'},
     })
-
+    console.log(content)
     document.location.replace(`/posts/${post_id}`)
 }
 
