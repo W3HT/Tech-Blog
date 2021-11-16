@@ -1,7 +1,7 @@
 {{> homeNavbar}}
 
 <div class="card m-3">
-    <div class="card-header text-white bg-primary" data-postId="{{post.id}}">
+    <div class="card-header text-white bg-primary" id="post-card" data-postId="{{post.id}}">
         {{post.title}}
     </div>
     <div class="card-body">
@@ -18,7 +18,7 @@
 <section class="m-3">
     <h4>Comments</h4>
     {{#if post.comments}}
-        {{#each post.comments as |comment|}}
+        {{#each posts.comments as |comment|}}
             <div class="card m-3">
                 <p>{{comment.content}}</p>
                 {{#if comment.updated}}
@@ -37,7 +37,7 @@
         <label for="content">Comment</label>
         <textarea class="form-control" id="content" rows="3"></textarea>
     </div>
-    <button type="submit" class="btn btn-info">➕ New Comment</button>
+    <button type="submit" class="btn btn-info" id="new-comment-submit">➕ New Comment</button>
 </form>
 {{/if}}
 
