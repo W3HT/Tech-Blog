@@ -26,7 +26,7 @@ Comment.init(
 
         updated: {
             type: DataTypes.BOOLEAN,
-        }
+        },
     },
     {
         sequelize,

@@ -18,14 +18,14 @@
 <section class="m-3">
     <h4>Comments</h4>
     {{#if post.comments}}
-        {{#each posts.comments as |comment|}}
+        {{#each post.comments as |comment|}}
             <div class="card m-3">
                 <p>{{comment.content}}</p>
-                {{#if comment.updated}}
+                {{!-- {{#if comment.updated}}
                     <p> - {{comment.user.name}} Updated: {{format_date comment.updatedAt}} </p>
                     {{else}}
                     <p> - {{comment.user.name}} Created: {{format_date comment.createdAt}} </p>
-                {{/if}}
+                {{/if}} --}}
             </div>
         {{/each}}
     {{/if}}

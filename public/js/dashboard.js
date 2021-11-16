@@ -1,6 +1,6 @@
 function newPostForm() {
     console.log('New Post')
-    document.location.replace('/newPost');
+    document.location.replace('/singlePost');
 
 }
 

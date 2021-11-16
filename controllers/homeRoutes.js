@@ -42,7 +42,7 @@ router.get('/posts/:id', async (req, res) => {
 
             {
               model: Comment,
-              attributes:['content', 'user_id', 'createdAt'],
+              attributes:['content', 'user_id', ],
               includes: [User],
             },
         ]
