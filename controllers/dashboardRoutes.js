@@ -64,7 +64,7 @@ router.get('/viewPost/:id', async (req,res) =>{
     });
     let post = postData.get({plain: req.session.logged_in});
     post.comments = comments 
-    res.render('vewPost', {logged_in: req.session.logged_in});
+    res.render('viewPost', {logged_in: req.session.logged_in});
  });
 
 //

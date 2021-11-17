@@ -7,11 +7,7 @@
     <div class="card-body">
         <blockquote class="blockquote mb-0">
             <p>{{post.content}}</p>
-            {{!-- {{#if post.updated}}
-                <p> - {{post.user.name}} Updated: {{format_date post.updatedAt}}</p>
-                {{else}}
-                <p> - {{post.user.name}} Created: {{format_date post.createddAt}}</p>
-            {{/if}} --}}
+          
         </blockquote>
     </div>
 </div>
@@ -21,11 +17,9 @@
         {{#each post.Comments as |comment|}}
             <div class="card m-3">
                 <p>{{comment.content}}</p>
-                {{!-- {{#if comment.updated}} --}}
-                    {{!-- <p> - {{comment.user.name}} Updated: {{comment.createdAt}}  </p>
-                    {{else}} --}}
-                    <p> - {{comment.user.username}} Created: {{comment.createdAt}} </p>
-                {{!-- {{/if}} --}}
+               
+                    <footer> - {{comment.user.username}} Created: {{comment.createdAt}} </p>
+                    </footer>
             </div>
         {{/each}}
     {{/if}}
