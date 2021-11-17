@@ -1,5 +1,5 @@
 {{> homeNavbar}}
-<form>
+<div>
     <div id="post-card" class="form-group" data-postId="{{post.id}}">
         <label for="title">Post Title</label>
         <input type="text" class="form-control" id="title" value="{{post.title}}">
@@ -8,8 +8,8 @@
         <label for="content">Post Content</label>
         <textarea class="form-control" id="content" roles="3">{{post.content}}</textarea>
     </div>
-    <button type="submit" class="btn btn-info" id="update-post-btn">Update Post</button>
-    <button type="submit" class="btn btn-info" id="delete-post-btn">Delete Post</button>
+    <button type="button" class="btn btn-info" id="update-post-btn">Update Post</button>
+    <button type="button" class="btn btn-info" id="delete-post-btn">Delete Post</button>
 
-</form>
+</div>
 <script src="./js/viewPost.js"></script>

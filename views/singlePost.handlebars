@@ -17,15 +17,15 @@
 </div>
 <section class="m-3">
     <h4>Comments</h4>
-    {{#if post.comments}}
-        {{#each post.comments as |comment|}}
+    {{#if post.Comments}}
+        {{#each post.Comments as |comment|}}
             <div class="card m-3">
                 <p>{{comment.content}}</p>
-                {{!-- {{#if comment.updated}}
-                    <p> - {{comment.user.name}} Updated: {{format_date comment.updatedAt}} </p>
-                    {{else}}
-                    <p> - {{comment.user.name}} Created: {{format_date comment.createdAt}} </p>
-                {{/if}} --}}
+                {{!-- {{#if comment.updated}} --}}
+                    {{!-- <p> - {{comment.user.name}} Updated: {{comment.createdAt}}  </p>
+                    {{else}} --}}
+                    <p> - {{comment.user.username}} Created: {{comment.createdAt}} </p>
+                {{!-- {{/if}} --}}
             </div>
         {{/each}}
     {{/if}}
